@@ -35,6 +35,7 @@ El archivo de estilos aplica los siguientes diseños:
 
 ### Captura de Pantalla (Opcional)
 Para ver una captura del formulario, abre `index.html` en un navegador compatible y verifica el diseño final.
+![Captura de Pantalla](img/cap.png)
 
 ## Personalización
 
