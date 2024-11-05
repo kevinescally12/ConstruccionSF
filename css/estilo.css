@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    background-image: url(../img/istockphoto-1412282189-612x612.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+    background-color: #f5f5fa;
+    padding: 70px; 
+    width: 600px;
+    border-radius: 40px;
+    box-shadow: 0 6px 12px rgba(32, 26, 26, 0.505);
+    position: relative; 
+}
+
+.login-container h2 {
+    margin: 0;  
+    color: #1f1f69;
+    font-size: 40px;
+    position: absolute; 
+    top: 20px;
+    left: 20px;
+    text-align: left; 
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 45px; 
+}
+
+.input-row input {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #3f3f67;
+    border-radius: 20px;
+    outline: none;
+    box-shadow: 8px 5px 10px #0007;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 190px; 
+    margin-top: 15px;
+}
+
+.password-label {
+    font-size: 25px;
+    color: #08081a;
+}
+
+.remember-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #72b1b1, #8b3636b1 , #bf4141a6);
+    box-shadow: 4px 3px 6px rgba(54, 36, 36, 0.467);
+}
+
+.button-row {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 20px;
+    background-color: #8a73c7;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #ad91fa, #8a73c7 , #473c64);
+    transition: background-color 0.3s;
+    box-shadow: 8px 5px 10px #0007;
+}
+
