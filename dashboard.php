@@ -11,7 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SISTEMA</title>
+    <title>SISTEM</title>
     <link rel="stylesheet" href="css/estilodashboard.css">
 </head>
 <body>
@@ -30,7 +30,7 @@
         </div>
     </div> 
 
-    <div class="contenido">
+    <div class="content">
         <div class="header-section">
             <h2>Bienvenido al Dashboard</h2>
             <p>Aquí puedes gestionar y visualizar la información del sistema.</p>
