@@ -11,7 +11,7 @@ if (!isset($_SESSION["txtusername"])) {
 }
 
 $conexion = new conexion($host, $namedb, $userdb, $passworddb);
-$pdo = $conexion->obtenerconexion();
+//$pdo = $conexion->obtenerconexion();
 
 
 if ($pdo) {

@@ -1,6 +1,5 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/etc/config.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . '/models/conexion.php';
 
 session_start();
 if (!isset($_SESSION["txtusername"])) {
@@ -66,19 +65,19 @@ if (!isset($_SESSION["txtusername"])) {
                 break;
 
             case 'ver':
-                echo "<iframe src='" . get_views('verdatos.php') . "' ></iframe>";
+                echo "<iframe src='" . get_controlers('controladorusuario.php') . "'class ='caja_lugar' ></iframe>";
                 break;
 
             case 'ingresar':
-                echo "<iframe src='" . get_views('ingresardatos.php') . "' ></iframe>";
+                echo "<iframe src='" . get_controlers('controladoringresarusuario.php') . "'class ='caja_lugar' ></iframe>";
                 break;
 
             case 'modificar':
-                echo "<iframe src='" . get_views('modidicardatos.php') . "' ></iframe>";
+                echo "<iframe src='" . get_views('modidicardatos.php') . "' class ='caja_lugar'></iframe>";
                 break;
 
             case 'eliminar':
-                echo "<iframe src='" . get_views('eliminardatos.php') . "' ></iframe>";
+                echo "<iframe src='" . get_views('eliminardatos.php') . "'class ='caja_lugar' ></iframe>";
                 break;
 
             default:

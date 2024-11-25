@@ -1,45 +1,64 @@
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'].'/etc/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/etc/config.php';
 
-class conexion {
+class Conexion
+{
     private $host;
     private $namedb;
     private $userdb;
     private $passwordb;
     private $charset;
 
-    private $pdo;
+    private static $pdo = null;
 
-    public function __construct($host,$namedb,$userdb,$passwordb,$charset='utf8') {
-        $this->host = $host;
-        $this->namedb = $namedb;
-        $this->userdb = $userdb;
-        $this->passwordb = $passwordb;
-        $this->charset = $charset;
+    public function __construct()
+    {
+        $this->host = DB_HOST;
+        $this->namedb = DB_NAME;
+        $this->userdb = DB_USER;
+        $this->passwordb = DB_PASS;
+        $this->charset = 'utf8';
 
-        $this->conectar();
-    }
+        if (self::$pdo == null) {
 
-    public function conectar(){
-        $dsn = "mysql:host={$this->host};dbname={$this->namedb};charset={$this->charset}";
-
-        try {
-            $this->pdo = new PDO($dsn, $this->userdb, $this->passwordb);
-            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch(PDOexception $e) {
-            die("hubo un error". $e->getMessage());
+            $this->conectar();
         }
     }
 
-    public function obtenerConexion() {
-        return $this->pdo;
+    private function conectar()
+    {
+        $dsn = "mysql:host={$this->host};dbname={$this->namedb};charset={$this->charset}";
+
+        try {
+            self::$pdo = new PDO($dsn, $this->userdb, $this->passwordb);
+            self::$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOexception $e) {
+            die("hubo un error" . $e->getMessage());
+        }
     }
 
-    public function contesta() {
+    public static function obtenerConexion()
+    {
+        if(self::$pdo == null){
+            new self;
+        }
+        return self::$pdo;
+    }
+
+    public function contesta()
+    {
         $dsn = "mysql:host={$this->host};dbname={$this->namedb};charset={$this->charset}";
         return $dsn;
     }
+}
+
+    /*try{
+        $conexion = Conexion::obtenerConexion();
+        echo "conexion";
+    }catch(Exception $e){
+
+        echo "Error : ".$e->getMessage();
 
     }
-
+    */
 ?>
