@@ -73,11 +73,11 @@ if (!isset($_SESSION["txtusername"])) {
                 break;
 
             case 'modificar':
-                echo "<iframe src='" . get_views('modidicardatos.php') . "' class ='caja_lugar'></iframe>";
+                echo "<iframe src='" . get_controlers('controladormodificarusuario.php') . "' class ='caja_lugar'></iframe>";
                 break;
 
             case 'eliminar':
-                echo "<iframe src='" . get_views('eliminardatos.php') . "'class ='caja_lugar' ></iframe>";
+                echo "<iframe src='" . get_controlers('controladoreliminarusuario.php') . "'class ='caja_lugar' ></iframe>";
                 break;
 
             default:

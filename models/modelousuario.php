@@ -1,7 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . '/models/conexion.php';
 
-//al insatanciar la clase debo de obtener la conexion, 
 class modelusuario
 {
     private $conexion;
@@ -11,29 +10,48 @@ class modelusuario
         $this->conexion = Conexion::obtenerConexion();
     }
 
-    //debe de haber un metodo para hacer un select
-
     public function obtenerUsuarios()
     {
-        $query = $this->conexion->query('select id,username,password,perfil from usuarios');
-        return $query->fetchALL(PDO::FETCH_ASSOC);
+        $query = $this->conexion->query('SELECT id, username, password, perfil FROM usuarios');
+        return $query->fetchAll(PDO::FETCH_ASSOC);
     }
-
-    //debe de haber un metodo para hacer un insert
 
     public function insertarUsuario($username, $password, $perfil)
     {
-        $query =
-            $this->conexion->query('insert into usuarios(username,password,perfil) values (:username, :password, :perfil');
+        $query = 'INSERT INTO usuarios (username, password, perfil) VALUES (:username, :password, :perfil)';
         $stmt = $this->conexion->prepare($query);
-        $stmt->bindParam('username', $username);
-        $stmt->bindParam('password', $password);
-        $stmt->bindParam('perfil', $perfil);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':perfil', $perfil);
         return $stmt->execute();
     }
-    //debe de haber un metodo para hacer un delete
 
-    
+    public function eliminarUsuario($username)
+    {
+        $query = 'DELETE FROM usuarios WHERE username = :username';
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(':username', $username);
+        return $stmt->execute();
+    }
 
-    //debe de haber un metodo para hacer un update
+    public function modificarUsuario($id, $username, $password, $perfil)
+    {
+        $query = 'UPDATE usuarios SET username = :username, password = :password, perfil = :perfil WHERE id = :id';
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':perfil', $perfil);
+        return $stmt->execute();
+    }
+
+    public function obteberUsuarioNombre($username)
+    {
+        $query = 'SELECT id, username, password, perfil FROM usuarios WHERE username = :username';
+        $stmt = $this->conexion->prepare($query);
+        $stmt->bindParam(':username', $username);
+        $stmt->execute(); // Ejecutar la consulta
+        return $stmt->fetch(PDO::FETCH_ASSOC); // Obtener un solo registro
+    }
 }
+?>

@@ -11,6 +11,8 @@ function mostrarUsuarios($usuarios){
             <th>Username</th>
             <th>Password</th>
             <th>Perfil</th>
+            <th>Eliminar</th>
+            <th>Modificar</th>
         </tr>;
 
         <?php
@@ -21,6 +23,8 @@ function mostrarUsuarios($usuarios){
                 <td><?php echo $usuario['username'] ?></td>
                 <td><?php echo str_repeat('*', strlen($usuario['password'])) ?></td>
                 <td><?php echo $usuario['perfil'] ?></td>
+                <td> <a href="#" > Eliminar</a></td>
+                <td> <a href="#" > Modificar</a></td>
             </tr>;
 
         <?php

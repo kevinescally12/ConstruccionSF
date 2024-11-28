@@ -9,11 +9,11 @@ if (!isset($_SESSION["txtusername"])) {
 }
 
 $mensaje = ''; 
-
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    $tmpdatusuario = $_POST["datusuario"] ?? ''; 
-    $tmpdatpassword = $_POST["datpassword"] ?? '';
-    $tmpdatperfil = $_POST["datperfil"] ?? '';
+    
+    $tmpdatusuario = $_POST["datusuario"]; 
+    $tmpdatpassword = $_POST["datpassword"];
+    $tmpdatperfil = $_POST["datperfil"];
 
     $modeloUsuario = new modelusuario();
 
