@@ -5,14 +5,14 @@ function mostrarFormularioBusqueda($mensaje = '')
         echo $mensaje;
         echo "<br>";
     } else {
-        ?>
+?>
         <form action="/controlers/controladormodificarusuario.php" method="POST">
             <label for="datusuario">Que usuario Modificar</label>
             <input type="text" name="datusuario" id="datusuario" required autocomplete="off">
             <br>
             <button type="submit">Encontrar</button>
         </form>
-        <?php
+    <?php
     }
 }
 
@@ -36,6 +36,6 @@ function mostrarFormularioEdicion($usuario, $mensaje = '')
 
         <button type="submit">Modificar Usuario</button>
     </form>
-    <?php
+<?php
 }
 ?>

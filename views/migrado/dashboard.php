@@ -41,27 +41,7 @@ if (!isset($_SESSION["txtusername"])) {
 
         switch ($opcion) {
             case 'inicio':
-                echo "<div class='header-section'>
-                        <h2>Bienvenido al Dashboard</h2>
-                        <p>Aquí puedes gestionar y visualizar la información del sistema.</p>
-                      </div>
-                      <div class='cards'>
-                          <div class='card'>
-                              <img src='" . get_urlBase('img/usuarioimg.png') . "' alt='Icono 1'>
-                              <h3>Total de Usuarios</h3>
-                              <p>1,245</p>
-                          </div>
-                          <div class='card'>
-                              <img src='" . get_urlBase('img/dineroimg.png') . "' alt='Icono 2'>
-                              <h3>Ventas Mensuales</h3>
-                              <p>$13,500</p>
-                          </div>
-                          <div class='card'>
-                              <img src='" . get_urlBase('img/ticket.jpg') . "' alt='Icono 3'>
-                              <h3>Tickets Abiertos</h3>
-                              <p>37</p>
-                          </div>
-                      </div>";
+                echo "<h1> bienvenido al sistema </h1>";
                 break;
 
             case 'ver':
